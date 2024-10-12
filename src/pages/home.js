@@ -1,4 +1,3 @@
-import relaxImg from "../images/relax-svgrepo-com.svg"
 import profileImg from "../images/logo.jpg"
 const container=document.querySelector(".container");
 let home=function(){
@@ -38,12 +37,9 @@ let home=function(){
     let low=document.createElement("div");
     low.id="low";
     low.textContent="Low";
-    let image=document.createElement("img");
-    image.src=relaxImg;
-    image.id="img";
     let message=document.createElement("p");
     message.textContent="Nothing to Do Add some more tasks";
-    let addBtn=document.createElement("div");
+    let addBtn=document.createElement("button");
     addBtn.id="button";
     addBtn.textContent="+";
     header.appendChild(logo);
@@ -55,7 +51,6 @@ let home=function(){
     sideBar.appendChild(medium);
     sideBar.appendChild(low);
     content.appendChild(todo);
-    content.appendChild(image);
     content.appendChild(message);
     content.appendChild(addBtn);
     container.appendChild(header);

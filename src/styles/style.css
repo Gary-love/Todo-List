@@ -41,6 +41,9 @@ body{
     align-items: center;
     font-size: 30px;
     background-color: #1e3a8a;
+    background-image: url("../images/relax-svgrepo-com.svg");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #button{
     margin-top: auto;   
@@ -57,10 +60,6 @@ body{
     align-items: center;
     border: solid black 5px;
 }
-#img{
-    height: 60vh;
-    filter: brightness(0) invert(1);
-}
 #logo{
     font-weight: bold;
     font-size: 2rem;
@@ -69,4 +68,19 @@ body{
     height: 50px;
     width: 50px;
     border-radius: 50%;
+}
+.data{
+    display: none;
+    flex-direction: column;
+    background-color: #0284c7;
+    height: 250px;
+    width: 250px;
+    gap: 15px;
+    padding: 15px;
+    border: solid black 2px;
+}
+#popup{
+    position: relative;
+    grid-column: 7/9;
+    grid-row: 4/6;
 }
