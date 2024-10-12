@@ -1,3 +1,5 @@
+import relaxImg from "../images/relax-svgrepo-com.svg"
+import profileImg from "../images/logo.jpg"
 const container=document.querySelector(".container");
 let home=function(){
     let header=document.createElement("div");
@@ -9,9 +11,12 @@ let home=function(){
     todo.textContent="Todo";
     let sideBar=document.createElement("div");
     sideBar.id="side";
-    let profile=document.createElement("div");
+    let profile=document.createElement("img");
     profile.id="profile";
-    profile.textContent="Profile";
+    profile.src=profileImg;
+    profile.onclick = function() {
+        window.location.href = 'https://github.com/Gary-love';
+    };
     let logo=document.createElement("div");
     logo.id="logo";
     logo.textContent="To do list";
@@ -33,6 +38,14 @@ let home=function(){
     let low=document.createElement("div");
     low.id="low";
     low.textContent="Low";
+    let image=document.createElement("img");
+    image.src=relaxImg;
+    image.id="img";
+    let message=document.createElement("p");
+    message.textContent="Nothing to Do Add some more tasks";
+    let addBtn=document.createElement("div");
+    addBtn.id="button";
+    addBtn.textContent="+";
     header.appendChild(logo);
     header.appendChild(profile);
     sideBar.appendChild(inbox);
@@ -42,6 +55,9 @@ let home=function(){
     sideBar.appendChild(medium);
     sideBar.appendChild(low);
     content.appendChild(todo);
+    content.appendChild(image);
+    content.appendChild(message);
+    content.appendChild(addBtn);
     container.appendChild(header);
     container.appendChild(sideBar);
     container.appendChild(content);
