@@ -1,23 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-<div id="popup">
-            <div class="data">
-            <label for="name">Task name</label>
-            <input type="text" id="name">
-            <label for="des">Description</label>
-            <input type="text" id="des">
-            <label for="Date">Date</label>
-            <input type="date" id="Date">
-            </div>
-            </div>
+      <div id="popup">
+        <div class="data">
+          <label for="name">What is to be done?</label>
+          <input type="text" id="name" placeholder="Enter Task here"/>
+          <label for="Date">Due date</label>
+          <input type="date" id="Date" placeholder="Date not set"/>
+          <label for="list">List</label>
+          <select name="List">
+            <option value="default" selected>default</option>
+            <option value="work">work</option>
+            <option value="school">school</option>
+          </select>
+          
+          <button class="submit">Submit</button>
+          <button class="close">Close</button>
+        </div>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>

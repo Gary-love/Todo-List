@@ -37,8 +37,8 @@ let home=function(){
     let low=document.createElement("div");
     low.id="low";
     low.textContent="Low";
-    let message=document.createElement("p");
-    message.textContent="Nothing to Do Add some more tasks";
+    let task=document.createElement("div");
+    task.id='tasks'
     let addBtn=document.createElement("button");
     addBtn.id="button";
     addBtn.textContent="+";
@@ -51,7 +51,7 @@ let home=function(){
     sideBar.appendChild(medium);
     sideBar.appendChild(low);
     content.appendChild(todo);
-    content.appendChild(message);
+    content.appendChild(task);
     content.appendChild(addBtn);
     container.appendChild(header);
     container.appendChild(sideBar);
