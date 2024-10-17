@@ -1,60 +1,21 @@
-import profileImg from "../images/logo.jpg"
-const container=document.querySelector(".container");
 let home=function(){
-    let header=document.createElement("div");
-    header.id="header";
-    let content=document.createElement("div");
-    content.id="content";
+    const content=document.querySelector("#content");
     let todo=document.createElement("div");
     todo.id="todo";
     todo.textContent="Todo";
-    let sideBar=document.createElement("div");
-    sideBar.id="side";
-    let profile=document.createElement("img");
-    profile.id="profile";
-    profile.src=profileImg;
-    profile.onclick = function() {
-        window.location.href = 'https://github.com/Gary-love';
-    };
-    let logo=document.createElement("div");
-    logo.id="logo";
-    logo.textContent="To do list";
-    let inbox=document.createElement("div");
-    inbox.id="inbox";
-    inbox.textContent="Inbox";
-    let today=document.createElement("div");
-    today.id="today";
-    today.textContent="Today";
-    let  priority=document.createElement("div");
-    priority.id="priority";
-    priority.textContent="Priority";
-    let high=document.createElement("div");
-    high.id="high";
-    high.textContent="High";
-    let medium=document.createElement("div");
-    medium.id="medium";
-    medium.textContent="Medium";
-    let low=document.createElement("div");
-    low.id="low";
-    low.textContent="Low";
     let task=document.createElement("div");
     task.id='tasks'
     let addBtn=document.createElement("button");
     addBtn.id="button";
     addBtn.textContent="+";
-    header.appendChild(logo);
-    header.appendChild(profile);
-    sideBar.appendChild(inbox);
-    sideBar.appendChild(today);
-    sideBar.appendChild(priority);
-    sideBar.appendChild(high);
-    sideBar.appendChild(medium);
-    sideBar.appendChild(low);
+    let task1=document.createElement("div");
+    task1.id="work";
+    task1.classList.add("task");
+    task1.textContent="touch grass";
+    task.appendChild(task1)
+    task.appendChild(task1);
     content.appendChild(todo);
     content.appendChild(task);
     content.appendChild(addBtn);
-    container.appendChild(header);
-    container.appendChild(sideBar);
-    container.appendChild(content);
 }
 export default home;
