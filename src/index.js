@@ -23,19 +23,15 @@ document.querySelector(".submit").addEventListener("click",()=>{
 })
 projects.forEach(project=>{
     project.addEventListener("click",()=>{
-        content.textContent="";
+        let tasks=document.querySelectorAll(".task");
+        // content.textContent="";
         switch(project.id){
             case "all":
-                home();
+                printTasks(project,tasks);
                 break;
             default:
-                printTasks(project.id)
+                 printTasks(project,tasks)
                 break;
         }
     })
 })
-// projects.forEach(project=>{
-//     project.addEventListener("click",()=>{
-//          printTasks(project);
-//     })
-// })

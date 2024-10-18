@@ -1,9 +1,15 @@
-let things = document.querySelector(".task")
-let printTasks = function (option) {
-   things.forEach(task=>{
-    if(task.id===option.id){
-        console.log(task.class);
-    }
+let printTasks = function (option,tasks) {
+   tasks.forEach(task=>{
+      if(option.id===task.id){
+        task.style.display="flex";
+        console.log(task)
+      }
+      else{
+        task.style.display="none";
+      }
+      if(option.id==="all"){
+        task.style.display="flex";
+      }
    })
 };
 export default printTasks;

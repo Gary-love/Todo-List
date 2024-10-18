@@ -35,7 +35,7 @@ let loadFist = () => {
   school.classList.add("project");
   school.textContent = "school";
   let project1 = document.createElement("div");
-  project1.id = "project1";
+  project1.id = "default";
   project1.classList.add("project");
   project1.textContent = "project1";
   let all = document.createElement("div");
