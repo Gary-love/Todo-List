@@ -2,8 +2,8 @@ import home from "./home";
 import profileImg from "../images/logo.jpg";
 const container = document.querySelector(".container");
 let loadFist = () => {
-    let content=document.createElement("div");
-    content.id="content";
+  let content=document.createElement("div");
+  content.id="content";
   let header = document.createElement("div");
   header.id = "header";
   let sideBar = document.createElement("div");
@@ -55,5 +55,26 @@ let loadFist = () => {
   container.appendChild(sideBar);
   container.appendChild(content);
   home();
+  buildTaskDefault("cut the grass","work");
+  buildTaskDefault("go outside","school");
 };
+let buildTaskDefault=(name,project)=>{
+  let content=document.querySelector("#content");
+  let tasks=document.querySelector('#tasks');
+  let task = document.createElement("div");
+  task.classList.add("task");
+  task.id=project;
+  let input = document.createElement("input");
+  input.type = "checkbox";
+  input.classList.add("checkbox");
+  task.appendChild(input);
+  let label = document.createElement("label");
+  label.textContent = name;
+  task.appendChild(label);
+  input.addEventListener("click", () => {
+    task.remove();
+  });
+  tasks.appendChild(task);
+  content.style.backgroundImage="none";
+}
 export default loadFist;

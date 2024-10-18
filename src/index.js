@@ -29,7 +29,7 @@ projects.forEach(project=>{
                 home();
                 break;
             default:
-                console.log(project.id);
+                printTasks(project.id)
                 break;
         }
     })
