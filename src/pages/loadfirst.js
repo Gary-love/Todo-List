@@ -42,6 +42,9 @@ let loadFist = () => {
   all.id = "all";
   all.classList.add("project");
   all.textContent = "All projects";
+  let addProj=document.createElement("button");
+  addProj.id="add";
+  addProj.textContent="+";
   header.appendChild(logo);
   header.appendChild(profile);
   sideBar.appendChild(inbox);
@@ -51,6 +54,7 @@ let loadFist = () => {
   project.appendChild(project1);
   project.appendChild(work);
   project.appendChild(school);
+  project.appendChild(addProj);
   container.appendChild(header);
   container.appendChild(sideBar);
   container.appendChild(content);

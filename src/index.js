@@ -1,11 +1,11 @@
 import home from "./pages/home";
 import "./styles/style.css";
-import build from "./pages/methods";
+import {buildTask} from "./pages/methods";
+import {buildProjects} from "./pages/methods";
 import printTasks from "./pages/projects";
 import loadFirst from "./pages/loadfirst"
 loadFirst();
 let button=document.querySelector("#button");
-let projects=document.querySelectorAll(".project");
 let closeBtn=document.querySelector(".close");
 let content=document.querySelector("#content")
 
@@ -19,19 +19,30 @@ closeBtn.addEventListener("click",()=>{
 })
 document.querySelector(".submit").addEventListener("click",()=>{
     document.querySelector(".data").style.display="none";
-    build();
+    buildTask();
 })
-projects.forEach(project=>{
-    project.addEventListener("click",()=>{
-        let tasks=document.querySelectorAll(".task");
-        // content.textContent="";
-        switch(project.id){
-            case "all":
-                printTasks(project,tasks);
-                break;
-            default:
-                 printTasks(project,tasks)
-                break;
-        }
+
+let showProjTask=function(){
+    let projects=document.querySelectorAll(".project");
+    projects.forEach(project=>{
+        project.addEventListener("click",()=>{
+            let tasks=document.querySelectorAll(".task");
+            // content.textContent="";
+            switch(project.id){
+                case "all":
+                    printTasks(project,tasks);
+                    break;
+                default:
+                     printTasks(project,tasks)
+                    break;
+            }
+        })
     })
+}
+showProjTask();
+
+let addProj=document.querySelector("#add");
+addProj.addEventListener("click",()=>{
+    buildProjects();
 })
+export default showProjTask;

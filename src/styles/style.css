@@ -22,13 +22,16 @@ body{
     grid-row: 2/13;
     display: flex;
     flex-direction: column;
-    min-width: 80px;
+    min-width: 100px;
     max-width:200px;
     gap: 30px;
     padding: 30px;
     background-color: #0284c7;
     font-weight: bold;
     font-size: 2rem;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    max-height: 90vh;
 }
 #project{
     margin-top: auto;
@@ -98,3 +101,9 @@ body{
     border: solid black 3px;
     width: 500px;
 }
+#side::-webkit-scrollbar {
+    display: none;
+  }
+#newPro{
+    width: 14vh;
+  }
