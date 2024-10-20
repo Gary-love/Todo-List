@@ -1,8 +1,8 @@
 import showProjTask from "../index";
 let untitledNum=1;
+let select=document.querySelector('select');
 let buildTask = () => {
   let name=document.querySelector("#name");
-  let select=document.querySelector('select');
   let content=document.querySelector("#content");
   let tasks=document.querySelector('#tasks');
   let task = document.createElement("div");
@@ -20,15 +20,7 @@ let buildTask = () => {
   });
   tasks.appendChild(task);
   content.style.backgroundImage="none";
-  fun(content);
 };
-let fun=function(content){
-  let select=document.querySelector('select');
-  if(select.value==="add"){
-    select.options[select.options.length]=new Option('text','sth')
-  }
-
-}
 let buildProjects=()=>{
   let projects=document.querySelector("#project");
   let newProject=document.createElement("div");
@@ -41,11 +33,11 @@ let buildProjects=()=>{
   projects.insertBefore(newProject,addBtn);
   addBtn.style.display="none";
   projects.appendChild(newProject);
-  let addPro=document.querySelector("#newPro");
   input.addEventListener("keypress",(e)=>{
     if(e.key=="Enter"){
       let addPro=document.querySelector("#newPro");
       let newProj=document.createElement("div");
+      let option=document.createElement("option");
       if(addPro.value===""){
         newProj.id=`untitled${untitledNum}`;
         newProj.textContent=`untitled${untitledNum}`;
@@ -57,12 +49,14 @@ let buildProjects=()=>{
       }
       newProj.classList="project";
       projects.insertBefore(newProj,addBtn);
+      option.value=newProj.id;
+      option.textContent=newProj.id;
+      select.appendChild(option)
       showProjTask();
       input.remove();
       newProject.remove();
-      addBtn.style.display="flex";
+      addBtn.style.display="block";
     }
   })  
 }
-
 export{buildProjects,buildTask};

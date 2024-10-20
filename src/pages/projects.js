@@ -9,7 +9,7 @@ let printTasks = function (option,tasks) {
       }
       if(option.id==="all"){
         task.style.display="flex";
-      }
+      }    
    })
 };
 export default printTasks;

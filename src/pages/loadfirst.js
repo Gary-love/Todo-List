@@ -17,15 +17,12 @@ let loadFist = () => {
   let logo = document.createElement("div");
   logo.id = "logo";
   logo.textContent = "To do project";
-  let inbox = document.createElement("div");
-  inbox.id = "inbox";
-  inbox.textContent = "Inbox";
   let today = document.createElement("div");
   today.id = "today";
   today.textContent = "Today";
   let project = document.createElement("div");
   project.id = "project";
-  project.textContent = "projects";
+  project.textContent = "Projects";
   let work = document.createElement("div");
   work.id = "work";
   work.classList.add("project");
@@ -47,7 +44,6 @@ let loadFist = () => {
   addProj.textContent="+";
   header.appendChild(logo);
   header.appendChild(profile);
-  sideBar.appendChild(inbox);
   sideBar.appendChild(today);
   sideBar.appendChild(project);
   project.appendChild(all);

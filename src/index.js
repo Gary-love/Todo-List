@@ -1,4 +1,3 @@
-import home from "./pages/home";
 import "./styles/style.css";
 import {buildTask} from "./pages/methods";
 import {buildProjects} from "./pages/methods";
@@ -7,7 +6,6 @@ import loadFirst from "./pages/loadfirst"
 loadFirst();
 let button=document.querySelector("#button");
 let closeBtn=document.querySelector(".close");
-let content=document.querySelector("#content")
 
 button.addEventListener("click",()=>{
     document.querySelector(".data").style.display="flex";
@@ -27,7 +25,6 @@ let showProjTask=function(){
     projects.forEach(project=>{
         project.addEventListener("click",()=>{
             let tasks=document.querySelectorAll(".task");
-            // content.textContent="";
             switch(project.id){
                 case "all":
                     printTasks(project,tasks);
@@ -40,7 +37,6 @@ let showProjTask=function(){
     })
 }
 showProjTask();
-
 let addProj=document.querySelector("#add");
 addProj.addEventListener("click",()=>{
     buildProjects();
