@@ -2,8 +2,8 @@ import home from "./home";
 import profileImg from "../images/logo.jpg";
 const container = document.querySelector(".container");
 let loadFist = () => {
-  let content=document.createElement("div");
-  content.id="content";
+  let content = document.createElement("div");
+  content.id = "content";
   let header = document.createElement("div");
   header.id = "header";
   let sideBar = document.createElement("div");
@@ -39,9 +39,9 @@ let loadFist = () => {
   all.id = "all";
   all.classList.add("project");
   all.textContent = "All projects";
-  let addProj=document.createElement("button");
-  addProj.id="add";
-  addProj.textContent="+";
+  let addProj = document.createElement("button");
+  addProj.id = "add";
+  addProj.textContent = "+";
   header.appendChild(logo);
   header.appendChild(profile);
   sideBar.appendChild(today);
@@ -55,15 +55,15 @@ let loadFist = () => {
   container.appendChild(sideBar);
   container.appendChild(content);
   home();
-  buildTaskDefault("cut the grass","work");
-  buildTaskDefault("go outside","school");
+  buildTaskDefault("cut the grass", "work");
+  buildTaskDefault("go outside", "school");
 };
-let buildTaskDefault=(name,project)=>{
-  let content=document.querySelector("#content");
-  let tasks=document.querySelector('#tasks');
+let buildTaskDefault = (name, project) => {
+  let content = document.querySelector("#content");
+  let tasks = document.querySelector("#tasks");
   let task = document.createElement("div");
   task.classList.add("task");
-  task.id=project;
+  task.id = project;
   let input = document.createElement("input");
   input.type = "checkbox";
   input.classList.add("checkbox");
@@ -75,6 +75,6 @@ let buildTaskDefault=(name,project)=>{
     task.remove();
   });
   tasks.appendChild(task);
-  content.style.backgroundImage="none";
-}
+  content.style.backgroundImage = "none";
+};
 export default loadFist;

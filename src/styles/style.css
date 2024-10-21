@@ -122,7 +122,6 @@ body{
 #newPro{
     width: 14vh;
   }
-  #add:hover{
+#add:hover{
     color:green;
-
-  }
+}

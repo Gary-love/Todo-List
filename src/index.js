@@ -6,7 +6,13 @@ import loadFirst from "./pages/loadfirst"
 loadFirst();
 let button=document.querySelector("#button");
 let closeBtn=document.querySelector(".close");
+let tasks=document.querySelector("#tasks");
+let removeInput=document.querySelectorAll(".checkbox");
+let content=document.querySelector("#content");
+let todo=document.querySelector("#todo");
 
+console.log(tasks)
+console.log(tasks.childElementCount)
 button.addEventListener("click",()=>{
     document.querySelector(".data").style.display="flex";
     
@@ -18,6 +24,16 @@ closeBtn.addEventListener("click",()=>{
 document.querySelector(".submit").addEventListener("click",()=>{
     document.querySelector(".data").style.display="none";
     buildTask();
+})
+removeInput.forEach((input)=>{
+    input.addEventListener("click", () => {
+        if(tasks.childElementCount===0){
+            content.style=`
+            background-image: url("./577079783ec440e56f88.svg");`
+            todo.textContent="No tasks, relax";
+        }
+      });
+
 })
 
 let showProjTask=function(){
