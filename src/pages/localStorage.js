@@ -1,4 +1,3 @@
-import { buildProjects } from "./methods";
 let store = thing => {
   let num = 0;
   if (localStorage.getItem("num") === null) {
