@@ -1,12 +1,19 @@
 import showProjTask from "../index";
+import {store} from "./localStorage"
+import {deleteData} from "./localStorage"
 let untitledNum=1;
 let select=document.querySelector('select');
 let buildTask = () => {
   let name=document.querySelector("#name");
+  let date=document.querySelector("#Date");
   let content=document.querySelector("#content");
   let tasks=document.querySelector('#tasks');
   let task = document.createElement("div");
+  let dueDate = document.createElement("div");
+  dueDate.classList="date"
+  dueDate.textContent=date.value;
   task.classList.add("task");
+  task.classList.add(select.value);
   task.id=select.value;
   let input = document.createElement("input");
   input.type = "checkbox";
@@ -16,10 +23,13 @@ let buildTask = () => {
   label.textContent = name.value;
   task.appendChild(label);
   input.addEventListener("click", () => {
+    deleteData(task);
     task.remove();
   });
+  task.appendChild(dueDate);
   tasks.appendChild(task);
   content.style.backgroundImage="none";
+  store(task);
 };
 let buildProjects=()=>{
   let projects=document.querySelector("#project");

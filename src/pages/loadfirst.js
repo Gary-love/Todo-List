@@ -1,5 +1,6 @@
 import home from "./home";
 import profileImg from "../images/logo.jpg";
+import { printTask } from "./localStorage";
 const container = document.querySelector(".container");
 let loadFist = () => {
   let content = document.createElement("div");
@@ -57,6 +58,7 @@ let loadFist = () => {
   home();
   buildTaskDefault("cut the grass", "work");
   buildTaskDefault("go outside", "school");
+  printTask();
 };
 let buildTaskDefault = (name, project) => {
   let content = document.querySelector("#content");

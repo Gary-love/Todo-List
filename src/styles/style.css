@@ -125,3 +125,9 @@ body{
 #add:hover{
     color:green;
 }
+.date{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    font-size: 10px;
+}

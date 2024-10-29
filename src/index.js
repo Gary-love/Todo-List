@@ -2,7 +2,7 @@ import "./styles/style.css";
 import {buildTask} from "./pages/methods";
 import {buildProjects} from "./pages/methods";
 import printTasks from "./pages/projects";
-import loadFirst from "./pages/loadfirst"
+import loadFirst from "./pages/loadfirst";
 loadFirst();
 let button=document.querySelector("#button");
 let closeBtn=document.querySelector(".close");
