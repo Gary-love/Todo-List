@@ -17,8 +17,8 @@ let store = thing => {
 let deleteData = thing => {
   let num = localStorage.getItem("num");
   for (let i = 1; i <= num; i++) {
-    let task = localStorage.getItem(`task${i}id`);
-    if (task === thing.id) {
+    let task = localStorage.getItem(`task${i}content`);
+    if (task === thing.textContent) {
       localStorage.removeItem(`task${i}id`);
       localStorage.removeItem(`task${i}class1`);
       localStorage.removeItem(`task${i}class2`);
