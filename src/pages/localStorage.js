@@ -30,6 +30,7 @@ let deleteData = thing => {
 };
 let printTask = () => {
   let num = localStorage.getItem("num");
+  const projectSet = new Set();
   for (let i = 1; i <= num; i++) {
     let taskClass1 = localStorage.getItem(`task${i}class1`);
     let taskClass2 = localStorage.getItem(`task${i}class2`);
@@ -63,10 +64,20 @@ let printTask = () => {
       //   task.appendChild(dueDate);
       tasks.appendChild(task);
       content.style.backgroundImage = "none";
-      if (
+      for(let j=0;j<=num;j++){
+        let counter=0;
+        let secondClass=localStorage.getItem(`task${j}class2`);
+        if(secondClass===taskClass2){
+          counter++;
+        }
+        else{
+          console.log("we cool")
+        }
+        if (
         taskClass2 != "work" &&
         taskClass2 != "school" &&
-        taskClass2 != "default"
+        taskClass2 != "default" &&
+        !projectSet.has(taskClass2)
       ) {
         let select=document.querySelector('select');
         let newProj=document.createElement("div");
@@ -79,6 +90,8 @@ let printTask = () => {
         option.value = newProj.id;
         option.textContent = newProj.id;
         select.appendChild(option);
+        projectSet.add(taskClass2);
+      }
       }
     }
   }
